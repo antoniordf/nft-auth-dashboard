@@ -1,1 +1,33 @@
+# Node modules
+node_modules
+
+# Build artifacts
+build
+
+# Environment files
 .env
+
+# Cache
+.cache
+
+# Truffle build
+*.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like nyc
+coverage
+
+# IDE files
+.idea
+*.sw*
+.vscode
