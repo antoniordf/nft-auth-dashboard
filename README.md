@@ -21,7 +21,7 @@ Before you begin, make sure you have the following installed:
 # Installation
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/nft_auth_dashboard.git
+   git clone https://github.com/antoniordf/nft_auth_dashboard.git
 
 2. Change into the project directory:
    cd nft_auth_dashboard
