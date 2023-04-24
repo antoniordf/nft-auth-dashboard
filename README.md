@@ -42,19 +42,29 @@ Before you begin, make sure you have the following installed:
 2. Deploy the contracts to your local network:
    truffle migrate --network development
 
-3. In the client directory, start the frontend server:
+3. Update the contract address in the `App.js` file:
+   After deploying the contract, take note of the deployed contract address and update the `contractAddress` variable in the `src/App.js` file with the new address.
+
+```javascript
+const contractAddress = "0xYourDeployedContractAddress";
+```
+
+4. In the client directory, start the frontend server:
    npm start
 
-4. Visit the application in your browser at http://localhost:3000.
-5. Connect your Metamask wallet to the local Ethereum network.
-6. To simulate owning an NFT from the designated collection, mint an NFT to your wallet address using the Truffle console:
+5. Visit the application in your browser at http://localhost:3000.
+6. Connect your Metamask wallet to the local Ethereum network.
+7. To simulate owning an NFT from the designated collection, mint an NFT to your wallet address using the Truffle console:
+
+```javascript
    truffle console --network development
    const TestERC721 = artifacts.require("TestERC721");
    const testERC721 = await TestERC721.deployed();
    const accounts = await web3.eth.getAccounts();
    await testERC721.mint(accounts[0], 1);
+```
 
-7. Refresh the application in your browser. If you have the specified NFT in your wallet, you will be granted access to the content.
+8. Refresh the application in your browser. If you have the specified NFT in your wallet, you will be granted access to the content.
 
 # License
 
