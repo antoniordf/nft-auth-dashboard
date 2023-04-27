@@ -23,8 +23,13 @@ app.post("/todos", async (req, res) => {
 });
 
 // get all todos
-app.get("/", (req, res) => {
-  res.send("Welcome to the NFT Auth Dashboard API");
+app.get("/todos", async (req, res) => {
+  try {
+    const allTodos = await pool.query("SELECT * FROM todos");
+    res.json(allTodos.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
 });
 
 // get a todo
