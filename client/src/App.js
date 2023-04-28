@@ -8,6 +8,7 @@ import InputTodo from "./components/InputTodo";
 function App() {
   const [hasAnyNFT, setHasAnyNFT] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [userAddress, setUserAddress] = useState("");
   const dAppContractAddress = "0x015C7643dcFaC4C87a5bf35d6c534133d2b646FB";
 
   useEffect(() => {
@@ -18,9 +19,10 @@ function App() {
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-      const userAddress = accounts[0];
+      const address = accounts[0];
+      setUserAddress(address);
 
-      const result = await userHasNFT(userAddress);
+      const result = await userHasNFT(address);
       setHasAnyNFT(result);
       setLoading(false);
     };
@@ -37,8 +39,10 @@ function App() {
         // Display the main content of your app
         <div>
           <Fragment>
-            Welcome, NFT holder! You can now access the content.
-            <InputTodo />
+            <div className="container">
+              Welcome, NFT holder! You can now access the content.
+              <InputTodo userAddress={userAddress} />
+            </div>
           </Fragment>
         </div>
       ) : (
