@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { initWeb3, initContract, userHasNFT } from "./utils/web3"; // Import the utility functions
 import DApp from "./build/contracts/DApp.json"; // Import the compiled contract JSON
 
-const { DAPP_CONTRACT_ADDRESS } = process.env;
+// Components
+import InputTodo from "./components/InputTodo";
 
 function App() {
   const [hasAnyNFT, setHasAnyNFT] = useState(false);
   const [loading, setLoading] = useState(true);
-  const dAppContractAddress = DAPP_CONTRACT_ADDRESS;
+  const dAppContractAddress = "0x015C7643dcFaC4C87a5bf35d6c534133d2b646FB";
 
   useEffect(() => {
     const setup = async () => {
@@ -34,7 +35,12 @@ function App() {
         <div>Loading...</div>
       ) : hasAnyNFT ? (
         // Display the main content of your app
-        <div>Welcome, NFT holder! You can now access the content.</div>
+        <div>
+          <Fragment>
+            Welcome, NFT holder! You can now access the content.
+            <InputTodo />
+          </Fragment>
+        </div>
       ) : (
         // Display a message indicating the user doesn't have any NFT from the collection
         <div>

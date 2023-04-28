@@ -6,6 +6,7 @@ build
 
 # Environment files
 .env
+client/ .env
 
 # Cache
 .cache

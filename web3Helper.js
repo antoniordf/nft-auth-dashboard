@@ -1,4 +1,3 @@
-require("dotenv").config();
 const { PROJECT_ID } = process.env;
 const Web3 = require("web3");
 const DApp = require("./build/contracts/DApp.json");
