@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { initWeb3, initContract, userHasNFT } from "./utils/web3"; // Import the utility functions
 import DApp from "./build/contracts/DApp.json"; // Import the compiled contract JSON
 
+const { DAPP_CONTRACT_ADDRESS } = process.env;
+
 function App() {
   const [hasAnyNFT, setHasAnyNFT] = useState(false);
   const [loading, setLoading] = useState(true);
-  const dAppContractAddress = "0x7fF95bF1a6E51075D44E229B250CFDA6aD385014";
+  const dAppContractAddress = DAPP_CONTRACT_ADDRESS;
 
   useEffect(() => {
     const setup = async () => {
@@ -23,7 +25,7 @@ function App() {
     };
 
     setup();
-  }, []);
+  }, [dAppContractAddress]);
 
   // Render the content conditionally based on the hasAnyNFT state
   return (
