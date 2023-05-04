@@ -10,7 +10,7 @@ function App() {
   const [hasAnyNFT, setHasAnyNFT] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userAddress, setUserAddress] = useState("");
-  const dAppContractAddress = "0x015C7643dcFaC4C87a5bf35d6c534133d2b646FB";
+  const dAppContractAddress = "0xcaE6C3B00C9F21704D82822dA4246D0E0c514323";
 
   useEffect(() => {
     const setup = async () => {
