@@ -56,4 +56,4 @@ router.delete("/:id", async (req, res) => {
   res.json(`Todo id ${id} has been deleted.`);
 });
 
-module.exports = router;
+module.exports = { router, nftCheckMiddleware };
