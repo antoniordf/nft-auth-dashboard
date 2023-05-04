@@ -5,6 +5,7 @@ import DApp from "./build/contracts/DApp.json"; // Import the compiled contract 
 // Components
 import InputTodo from "./components/InputTodo";
 import ListTodos from "./components/ListTodos";
+import DataGraph from "./components/DataGraph";
 
 function App() {
   const [hasAnyNFT, setHasAnyNFT] = useState(false);
@@ -44,6 +45,7 @@ function App() {
               Welcome, NFT holder! You can now access the content.
               <InputTodo userAddress={userAddress} />
               <ListTodos />
+              <DataGraph />
             </div>
           </Fragment>
         </div>
