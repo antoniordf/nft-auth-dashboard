@@ -1,6 +1,6 @@
 # NFT Auth Dashboard
 
-This project demonstrates how to create a token-gated web application using Ethereum, NFTs (Non-Fungible Tokens), and the Truffle framework. Users are granted access to the content of the application only if they possess a specific NFT from a designated collection.
+This project demonstrates how to create a token-gated web application using Ethereum, NFTs (Non-Fungible Tokens), and the Truffle framework. Users are granted access to the content of the application only if they possess a specific NFT from a designated collection. The App is a simple Truffle + Express.js + React App. The posession of the NFT in your Metamask wallet is checked both in the front end as well as in the backend. The App is a sample Todo list app, simply used to test the Express.js endpoints. It also displays sample data from a python data analysis file using Plotly and Plotly's JavaScript wrapper.
 
 # Table of Contents
 
