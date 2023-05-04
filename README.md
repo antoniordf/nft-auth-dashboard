@@ -4,8 +4,7 @@ This project demonstrates how to create a token-gated web application using Ethe
 
 # Table of Contents
 
-Prerequisites
-
+- Prerequisites
 - Installation
 - Usage
 - License
