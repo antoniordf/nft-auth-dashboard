@@ -2,8 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const { spawn } = require("child_process");
-const todosController = require("./controllers/todosController");
-const { nftCheckMiddleware } = require("./controllers/todosController");
+const {
+  router: todosRouter,
+  nftCheckMiddleware,
+} = require("./controllers/todosController");
 
 // Middleware
 const corsOptions = {
@@ -17,7 +19,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
-app.use("/todos", todosController);
+app.use("/todos", todosRouter);
 
 // Fetch python data analysis script
 app.get("/api/data-analysis", nftCheckMiddleware, (req, res) => {

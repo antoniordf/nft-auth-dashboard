@@ -11,7 +11,7 @@ function App() {
   const [hasAnyNFT, setHasAnyNFT] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userAddress, setUserAddress] = useState("");
-  const dAppContractAddress = "0xcaE6C3B00C9F21704D82822dA4246D0E0c514323";
+  const dAppContractAddress = "0x1E16ba140c097A9BdD8A5dB80246b48faEcFC064"; // Sepolia address
 
   useEffect(() => {
     const setup = async () => {
