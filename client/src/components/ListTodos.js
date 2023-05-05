@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState, useCallback } from "react";
 
+import EditTodo from "./EditTodo";
+
 const ListTodos = ({ userAddress }) => {
   const [todos, setTodos] = useState([]);
 
@@ -22,11 +24,22 @@ const ListTodos = ({ userAddress }) => {
   return (
     <Fragment>
       <h1>List Todos</h1>
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>{todo.description}</li>
-        ))}
-      </ul>
+      <table>
+        <tbody>
+          {todos.map((todo, index) => (
+            <tr key={index}>
+              <td>{todo.description}</td>
+              <td>
+                <EditTodo
+                  todo={todo}
+                  getTodos={getTodos}
+                  userAddress={userAddress}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </Fragment>
   );
 };
